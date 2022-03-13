@@ -38,6 +38,7 @@ namespace CabInvoiceGenerator
             try
             {
                 totalFare = distance * MINIMUM_COST_PER_KM + time * COST_PER_TIME;
+                Console.WriteLine(" Distance : " + distance + "  |  Time : " + time);
             }
             catch (CabInvoiceException)
             {
@@ -61,14 +62,14 @@ namespace CabInvoiceGenerator
 
         public InvoiceSummary CalculateFare(Ride[] rides)
         {
-            double totalFare = 0;
+            double totalFare = 0.0;
             try
             {
                 foreach (Ride ride in rides)
                 {
-                    totalFare += this.CalculateFare(ride.distance, ride.time);
-
+                    totalFare = totalFare + this.CalculateFare(ride.distance, ride.time);
                 }
+                Console.WriteLine(" Total fare : " + totalFare);
             }
             catch (CabInvoiceException)
             {
@@ -76,8 +77,8 @@ namespace CabInvoiceGenerator
                 {
                     throw new CabInvoiceException(CabInvoiceException.ExceptionType.NULL_RIDES, "Rides are null");
                 }
-
             }
+            Console.WriteLine(" no of rides : " + rides.Length);
             return new InvoiceSummary(rides.Length, totalFare);
         }
 

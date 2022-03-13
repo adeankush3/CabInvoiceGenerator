@@ -8,7 +8,7 @@ namespace CabInvoiceGenerator
 {
     public class Ride
     {
-        // variables used
+        
         public double distance;
         public int time;
 
