@@ -35,7 +35,6 @@ namespace CabInvoiceGenerator
             this.averageFare = this.totalFare / this.numberOfRides;
             Console.WriteLine("[using userId] : {0}  |  Avg fair : {1}", this.userId, this.averageFare);
         }
-
         //The GetHashCode method provides hash code for algorithms that need quick checks of object equality.
         //Two objects that are equal return hash codes that are equal.
         public override bool Equals(object obj)

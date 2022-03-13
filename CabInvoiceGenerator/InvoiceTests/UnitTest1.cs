@@ -25,7 +25,6 @@ namespace CabInvoiceGeneratorTest
         }
 
         [Test]
-       
         public void GivenMultipleRide_ShouldReturn_InvoiceSummary()
         {
             invoiceGenerator = new InvoiceGenerator(RideType.NORMAL);
